@@ -6,60 +6,102 @@ const puppeteer = require('puppeteer');
 
 
 module.exports = function createKijijiDataSource(browser) {
-  return async () => {
-    async function scrapeHekaya() {
+//   return async () => {
+//     async function scrapeHekaya() {
+
+//     const page = await browser.newPage();
+//     await page.goto('https://www.kenyatalk.com/index.php?all-threads/', { waitUntil: 'load', timeout: 0 });
+//     await page.waitFor(120000);
+//     await page.waitForSelector('.structItemContainer');
+// /**
+// 1.click on each link
+// 2.
+//  */
+// const nextBtn = page.querySelector('.pageNav-jump--next');
+//     if(nextBtn) await nextBtn.click(),
+
+//       return stuffs;
+//     }
+
+// // this is a paginating button that should be clicked through for scraping
+//     const nextBtn = page.querySelector('.pageNav-jump--next');
+//     if(nextBtn) await nextBtn.click();
+
+
+// /// this code returns array list of links for story
+//      const hekayas = await page.evaluate(() => Array.from(document.querySelectorAll('div.structItem'))
+//       .map(eventRowEl => ({
+//         storyLink: eventRowEl.querySelector('div.structItem-title >a')
+//           .href,
+//       })));
+
+
+//     return Promise.all(
+//       [
+//         scrapeHekaya(),
+//       ]
+//     );
+//   };
+};
+
+
+
+//await page.screenshot({path: 'google.png'});
+
+//1.go to page
+
 
     const page = await browser.newPage();
     await page.goto('https://www.kenyatalk.com/index.php?all-threads/', { waitUntil: 'load', timeout: 0 });
     await page.waitFor(120000);
     await page.waitForSelector('.structItemContainer');
-/**
-1.click on each link
-2.
- */
-const nextBtn = page.querySelector('.pageNav-jump--next');
-    if(nextBtn) await nextBtn.click(),
-
-      return stuffs;
-    }
-
-// this is a paginating button that should be clicked through for scraping
-    const nextBtn = page.querySelector('.pageNav-jump--next');
-    if(nextBtn) await nextBtn.click();
 
 
-/// this code returns array list of links for story
-     const hekayas = await page.evaluate(() => Array.from(document.querySelectorAll('div.structItem'))
-      .map(eventRowEl => ({
-        storyLink: eventRowEl.querySelector('div.structItem-title >a')
-          .href,
-      })));
+//2. scrape storylink
+
+function storyLinks(url){
+
+  return hekayas;
+}
+//
+
+//3.see if theres another page
+//
+if(nextPage){
+
+}
+//
+
+//4.scrape
+//
+function storyLinks(url){
+
+  return hekayas;
+}
 
 
-    return Promise.all(
-      [
-        scrapeHekaya(),
-      ]
-    );
-  };
-};
+//5.open each story and
+
+function getHekaya(hekaya){
+
+return hekayasAndComments;
+}
+
+//6.scrape story and comments
+//
+if(postHasNextPageComments){
+
+}
 
 
 
-/**
- *
- * await page.screenshot({path: 'google.png'});
 
-1.go to page
-2. scrape storylink
-3.see if theres another page
-4.scrape
-5.open each story aand
-6.scrape story and comments
-7.click next pages comments
-8.concat()
 
- */
+//7.click next pages comments
+
+
+
+
 
  /**
   // functions
@@ -85,4 +127,3 @@ const nextBtn = page.querySelector('.pageNav-jump--next');
 
 
 
-  */
