@@ -13,7 +13,7 @@ module.exports = function createKijijiDataSource(browser) {
       //
       await page.waitFor(1000);
       // this is a paginating button that should be clicked through for scraping
-      const allBtns = await page.waitForSelector('li.pageNav-page--skipEnd >a');
+      const allBtns = await page.waitForSelector('li.pageNav-page--skipEnd >a'); //document.querySelector('span.inputGroup-text');
       // const nextBtn = 'li.pageNav-page >a';
 
 
