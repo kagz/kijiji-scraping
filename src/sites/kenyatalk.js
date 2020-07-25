@@ -25,9 +25,16 @@ module.exports = function createKijijiDataSource(browser) {
       return getContent(pageLinks.concat(content));
     }
     const allLinks = await getContent();
-    console.log(allLinks);
+    // console.log(allLinks);
+    // await page.screenshot({path: 'sample.png'})
     // scrape links
-    return allLinks;
+    return allLinks.reduce((previous, current, i) => {
+      if (i > 0) {
+        return console.log(i);
+      }
+
+      return previous;
+    });
   }
   return { fetchAll };
 };

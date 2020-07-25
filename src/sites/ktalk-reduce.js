@@ -37,8 +37,6 @@ module.exports = function createKijijiDataSource(browser) {
     }
 
     return storyLinks();
-
-    
   }
   return { fetchAll };
 };
