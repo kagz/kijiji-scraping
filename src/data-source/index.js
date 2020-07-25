@@ -1,6 +1,6 @@
 'use strict';
 
-const createKijijiDataSource = require('./kenyatalk');
+const createKijijiDataSource = require('../sites/kenyatalk');
 
 module.exports = function createDataSource(...args) {
   return {

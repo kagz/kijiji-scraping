@@ -6,9 +6,16 @@ const createDatasource = require('./data-source');
 module.exports = async function scrapeKijiji() {
   const browser = await puppeteer.launch({
     headless: false,
-    timeout: process.env.DEFAULT_TIMEOUT ? parseInt(process.env.DEFAULT_TIMEOUT, 10) : 120000,
+    timeout: 0,
     defaultViewport: null,
-    args: ['--window-size=1920,1080'],
+
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-accelerated-2d-canvas',
+      '--disable-gpu',
+      '--window-size=1920,1080',
+    ],
   });
   const dataSource = createDatasource(browser);
   return Promise.all(
