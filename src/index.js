@@ -20,5 +20,8 @@ module.exports = async function scrapeKijiji() {
   const dataSource = createDatasource(browser);
   return Promise.all(
     Object.values(dataSource).map(({ fetchAll }) => fetchAll()),
+
+
   );
+
 };

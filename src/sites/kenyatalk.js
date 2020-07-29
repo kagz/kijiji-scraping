@@ -1,6 +1,6 @@
 'use strict';
 
-// const { writeFileSync } = require('fs');
+const { getStory } = require('../data-source/posts');
 
 module.exports = function createKijijiDataSource(browser) {
   async function fetchAll() {
@@ -25,16 +25,8 @@ module.exports = function createKijijiDataSource(browser) {
       return getContent(pageLinks.concat(content));
     }
     const allLinks = await getContent();
-    // console.log(allLinks);
-    // await page.screenshot({path: 'sample.png'})
-    // scrape links
-    return allLinks.reduce((previous, current, i) => {
-      if (i > 0) {
-        return console.log(i);
-      }
 
-      return previous;
-    });
+    return getStory(allLinks, page);
   }
   return { fetchAll };
 };
